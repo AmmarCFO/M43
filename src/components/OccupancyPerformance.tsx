@@ -75,6 +75,7 @@ export function OccupancyPerformance({ isArabic }: OccupancyPerformanceProps) {
   const [isOpen, setIsOpen] = useState(false);
   const occupiedCount = Mb.filter((u) => u.aprStatus === "occupied").length;
   const totalUnits = Mb.length;
+  const contractAverage = jM.reduce((sum, item) => sum + item.pct, 0) / 12.5;
 
   return (
     <div id="occupancy-perf-card" className="border border-[#C89565]/20 shadow-lg bg-white overflow-hidden rounded-2xl">
@@ -118,7 +119,7 @@ export function OccupancyPerformance({ isArabic }: OccupancyPerformanceProps) {
                 {isArabic ? "متوسط العقد" : "Contract Average"}
               </p>
               <p className="text-2xl sm:text-3xl font-black text-[#C89565]">
-                81%
+                {Math.round(contractAverage * 100)}%
               </p>
               <p className="text-[9px] text-[#B0A08A] mt-1">
                 {isArabic ? "طوال 12.5 شهراً" : "Over 12.5 months"}
@@ -214,7 +215,7 @@ export function OccupancyPerformance({ isArabic }: OccupancyPerformanceProps) {
             
             <div className="flex items-center gap-4 mt-2 flex-wrap">
               {[{ color: "bg-[#C89565]", label: { en: "≥75%", ar: "≥75%" } },
-                { color: "bg-blue-500", label: { en: "40–74%", ar: "40–74%" } },
+                { color: "bg-blue-500", label: { en: "40-74%", ar: "40-74%" } },
                 { color: "bg-red-400", label: { en: "<40%", ar: "<40%" } }].map((colorItem, colorIdx) => (
                 <div key={colorIdx} className="flex items-center gap-1.5">
                   <div className={`w-3 h-3 rounded-sm ${colorItem.color}`} />
@@ -304,8 +305,8 @@ export function OccupancyPerformance({ isArabic }: OccupancyPerformanceProps) {
                       )}
                       <p className="text-[10px] text-[#B0A08A] mt-1">
                         {isArabic
-                          ? `أبريل ${Math.round(unit.aprOcc * 100)}%`
-                          : `Apr ${Math.round(unit.aprOcc * 100)}%`}
+                          ? `يونيو ${Math.round(unit.aprOcc * 100)}%`
+                          : `Jun ${Math.round(unit.aprOcc * 100)}%`}
                       </p>
                     </div>
                   </div>

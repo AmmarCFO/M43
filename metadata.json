@@ -1,5 +1,5 @@
 {
-  "name": "Mathwaa 43 Dashboard",
+  "name": "Mathwaa 43 - Al Ta'awun",
   "description": "An exact, high-fidelity replica of the Mathwaa 43 contract renewal performance dashboard, complete with interactive charts, floor plan status visualizers, and marketing campaigns.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

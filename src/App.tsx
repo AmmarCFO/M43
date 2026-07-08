@@ -80,7 +80,7 @@ export default function App() {
     executiveText: {
       en: [
         "This report documents the full performance of Mathwaa's management of Mathwaa 43 in Al Ta'awun throughout the contract period. It covers occupancy results, revenue collected, and marketing activities.",
-        "Most importantly, it includes a transparent breakdown of the real costs we have absorbed — and a clear demonstration that operating at 7% is generating net losses that are not sustainable.",
+        "Most importantly, it includes a transparent breakdown of the real costs we have absorbed, and a clear demonstration that operating at 7% is generating net losses that are not sustainable.",
         "Our goal is to make the case for adjusting contract terms: 15% retroactively on Year 1 to at minimum cover our costs, and 20% on the new contract to ensure this partnership remains viable."
       ],
       ar: [
@@ -105,16 +105,16 @@ export default function App() {
     closing: { en: "A Message to the Owner", ar: "رسالة إلى المالك" },
     closingText: {
       en: [
-        "We entered this partnership committed to delivering results — and the numbers in this report speak for themselves.",
+        "We entered this partnership committed to delivering results, and the numbers in this report speak for themselves.",
         "But transparency requires us to be direct: every month we operated under 7%, we absorbed losses out of our own pocket. This cannot continue.",
-        "We are proposing a fair path forward — 15% to settle Year 1 at cost, and 20% on the new contract to build a partnership that is sustainable for both sides.",
+        "We are proposing a fair path forward: 15% to settle Year 1 at cost, and 20% on the new contract to build a partnership that is sustainable for both sides.",
         "We believe in this asset and in this partnership. We just need the terms to reflect the reality of what it takes to operate at this level."
       ],
       ar: [
-        "دخلنا هذه الشراكة بالتزام حقيقي بتحقيق النتائج — والأرقام الواردة في هذا التقرير تتحدث عن نفسها.",
+        "دخلنا هذه الشراكة بالتزام حقيقي بتحقيق النتائج، والأرقام الواردة في هذا التقرير تتحدث عن نفسها.",
         "لكن الشفافية تقتضي أن نكون صريحين: كل شهر أدرنا المبنى بنسبة 7%، تحملنا خسائر من مواردنا الخاصة. هذا الوضع لا يمكن الاستمرار فيه.",
         "نقترح مساراً عادلاً للمضي قدماً: 15% لتسوية السنة الأولى بما يعادل تكاليفنا، و20% في العقد الجديد لبناء شراكة مستدامة لكلا الطرفين.",
-        "نؤمن بهذا العقار وبهذه الشراكة — نحتاج فقط إلى شروط تعكس حقيقة ما يتطلبه التشغيل بهذا المستوى."
+        "نؤمن بهذا العقار وبهذه الشراكة، نحتاج فقط إلى شروط تعكس حقيقة ما يتطلبه التشغيل بهذا المستوى."
       ]
     }
   };
@@ -308,7 +308,7 @@ export default function App() {
             {[
               { text: isArabic ? "حي التعاون، الرياض" : "Al Ta'awun, Riyadh", Icon: MapPin },
               { text: isArabic ? "20 وحدة" : "20 Units", Icon: Building },
-              { text: isArabic ? "يونيو 2025 – يونيو 2026" : "Jun 2025 – Jun 2026", Icon: Calendar }
+              { text: isArabic ? "يونيو 2025 - يونيو 2026" : "Jun 2025 - Jun 2026", Icon: Calendar }
             ].map((pill, idx) => (
               <span 
                 key={idx} 
@@ -578,7 +578,7 @@ export default function App() {
                         {isArabic ? "مشاهدات تيك توك العضوية" : "TikTok Organic Performance"}
                       </p>
                       <p className="text-zinc-400 text-xs">
-                        @mathwaa_ — {isArabic ? "مشاهدات عضوية لهذا العقار" : "organic views for this property"}
+                        @mathwaa_ - {isArabic ? "مشاهدات عضوية لهذا العقار" : "organic views for this property"}
                       </p>
                     </div>
                     <div className="ms-auto text-end">

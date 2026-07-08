@@ -13,7 +13,7 @@ export const Db: BuildingFloorLayout[] = [
     level: { en: "Floor 3", ar: "الدور الثالث" },
     bg: "bg-[#EDE5DC]",
     units: [
-      { id: "43-317", type: "1BR", status: "occupied" },
+      { id: "43-317", type: "1BR", status: "vacant" },
       { id: "43-318", type: "1BR", status: "occupied" },
       { id: "43-319", type: "1BR", status: "occupied" },
       { id: "43-320", type: "1BR", status: "occupied" }
@@ -24,7 +24,7 @@ export const Db: BuildingFloorLayout[] = [
     bg: "bg-[#F5EFE7]",
     units: [
       { id: "43-211", type: "1BR", status: "occupied" },
-      { id: "43-212", type: "1BR", status: "occupied" },
+      { id: "43-212", type: "1BR", status: "vacant" },
       { id: "43-213", type: "1BR", status: "occupied" },
       { id: "43-214", type: "1BR", status: "occupied" },
       { id: "43-215", type: "1BR", status: "occupied" },
@@ -56,26 +56,26 @@ export const Db: BuildingFloorLayout[] = [
 ];
 
 export const Mb: UnitOccupancyDetail[] = [
-  { id: "43-001", type: { en: "2-Bedroom", ar: "غرفتان" }, floor: { en: "Ground", ar: "أرضي" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 1 },
-  { id: "43-002", type: { en: "2-Bedroom", ar: "غرفتان" }, floor: { en: "Ground", ar: "أرضي" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 0.738 },
-  { id: "43-003", type: { en: "2-Bedroom", ar: "غرفتان" }, floor: { en: "Ground", ar: "أرضي" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 1 },
-  { id: "43-004", type: { en: "2-Bedroom", ar: "غرفتان" }, floor: { en: "Ground", ar: "أرضي" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 0.778 },
-  { id: "43-105", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 1", ar: "الدور الأول" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 0.667 },
-  { id: "43-106", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 1", ar: "الدور الأول" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 0.903 },
+  { id: "43-001", type: { en: "2-Bedroom", ar: "غرفتان" }, floor: { en: "Ground", ar: "أرضي" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 1 },
+  { id: "43-002", type: { en: "2-Bedroom", ar: "غرفتان" }, floor: { en: "Ground", ar: "أرضي" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.738 },
+  { id: "43-003", type: { en: "2-Bedroom", ar: "غرفتان" }, floor: { en: "Ground", ar: "أرضي" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 1 },
+  { id: "43-004", type: { en: "2-Bedroom", ar: "غرفتان" }, floor: { en: "Ground", ar: "أرضي" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.778 },
+  { id: "43-105", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 1", ar: "الدور الأول" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.667 },
+  { id: "43-106", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 1", ar: "الدور الأول" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.903 },
   { id: "43-107", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 1", ar: "الدور الأول" }, aprOcc: 0, aprStatus: "vacant", avgOcc: 0.973 },
-  { id: "43-108", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 1", ar: "الدور الأول" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 0.725 },
-  { id: "43-109", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 1", ar: "الدور الأول" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 0.93 },
-  { id: "43-110", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 1", ar: "الدور الأول" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 0.933 },
-  { id: "43-211", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 0.692 },
-  { id: "43-212", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 0.933, aprStatus: "occupied", avgOcc: 0.905 },
-  { id: "43-213", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 0.833 },
-  { id: "43-214", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 1 },
-  { id: "43-215", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 0.849 },
-  { id: "43-216", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 0.919 },
-  { id: "43-317", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 3", ar: "الدور الثالث" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 0.92 },
-  { id: "43-318", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 3", ar: "الدور الثالث" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 0.932 },
-  { id: "43-319", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 3", ar: "الدور الثالث" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 0.883 },
-  { id: "43-320", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 3", ar: "الدور الثالث" }, aprOcc: 0.967, aprStatus: "occupied", avgOcc: 1 }
+  { id: "43-108", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 1", ar: "الدور الأول" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.725 },
+  { id: "43-109", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 1", ar: "الدور الأول" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.93 },
+  { id: "43-110", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 1", ar: "الدور الأول" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.933 },
+  { id: "43-211", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.692 },
+  { id: "43-212", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 0, aprStatus: "vacant", avgOcc: 0.905 },
+  { id: "43-213", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.833 },
+  { id: "43-214", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 1 },
+  { id: "43-215", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.849 },
+  { id: "43-216", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.919 },
+  { id: "43-317", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 3", ar: "الدور الثالث" }, aprOcc: 0, aprStatus: "vacant", avgOcc: 0.92 },
+  { id: "43-318", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 3", ar: "الدور الثالث" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.932 },
+  { id: "43-319", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 3", ar: "الدور الثالث" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.883 },
+  { id: "43-320", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 3", ar: "الدور الثالث" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 1 }
 ];
 
 export const EM = 0.879; // Portfolio Average Occupancy Rate
@@ -93,7 +93,7 @@ export const jM: MonthlyOccupancyPct[] = [
   { month: { en: "Mar '26", ar: "مارس 26" }, pct: 0.864 },
   { month: { en: "Apr '26", ar: "أبريل 26" }, pct: 0.95 },
   { month: { en: "May '26", ar: "مايو 26" }, pct: 0.95 },
-  { month: { en: "Jun '26", ar: "يونيو 26" }, pct: 0.95 }
+  { month: { en: "Jun '26", ar: "يونيو 26" }, pct: 0.85 }
 ];
 
 export const Ou: MonthlyRevenue[] = [
@@ -175,7 +175,7 @@ export const insightsData: InsightItem[] = [
     color: "bg-emerald-50 border-emerald-100",
     labelColor: "text-emerald-700",
     items: [
-      { en: "Average occupancy of 88% over the active leasing period, maintaining 95% through May & June 2026.", ar: "بلغ متوسط الإشغال 88% خلال أشهر النشاط الرئيسية، مع الحفاظ على 95% خلال مايو ويونيو 2026." },
+      { en: "Average occupancy of 80% over the full 12.5-month contract, maintaining 85% in June 2026.", ar: "بلغ متوسط الإشغال 80% طوال فترة العقد الكاملة البالغة 12.5 شهراً، مع الحفاظ على نسبة 85% في يونيو 2026." },
       { en: "Peak occupancy of 98.7% was achieved in December 2025.", ar: "تم تحقيق ذروة الإشغال 98.7% في ديسمبر 2025." }
     ]
   },
@@ -203,7 +203,7 @@ export const marketingCampaigns = [
   { en: "Listing on Bayut and Wasalt with professional photography and optimized descriptions", ar: "الإدراج على بيوت ووصلت مع تصوير احترافي وأوصاف محسّنة" },
   { en: "Targeted paid ad campaigns on TikTok and Meta (Instagram & Facebook)", ar: "حملات إعلانية مدفوعة على تيك توك وميتا (انستغرام وفيسبوك)" },
   { en: "WhatsApp follow-up system for all incoming leads", ar: "نظام متابعة واتساب لجميع العملاء المحتملين" },
-  { en: "B2B sales efforts — e.g. Unit 43-002 is occupied through a B2B corporate lead", ar: "جهود المبيعات B2B — مثال: الوحدة 43-002 مشغولة بموجب عقد مع عميل مؤسسي" }
+  { en: "B2B sales efforts - e.g. Unit 43-002 is occupied through a B2B corporate lead", ar: "جهود المبيعات B2B - مثال: الوحدة 43-002 مشغولة بموجب عقد مع عميل مؤسسي" }
 ];
 
 export const formulasData: FormulaSection[] = [
@@ -263,12 +263,12 @@ export const formulasData: FormulaSection[] = [
       {
         name: { en: "Monthly Occupancy %", ar: "نسبة الإشغال الشهرية" },
         formula: { en: "Occupied Units ÷ Total Units × 100", ar: "الوحدات المشغولة ÷ إجمالي الوحدات × 100" },
-        example: { en: "19 occupied ÷ 20 total × 100 = 95%", ar: "19 مشغولة ÷ 20 كلي × 100 = 95%" }
+        example: { en: "17 occupied ÷ 20 total × 100 = 85%", ar: "17 مشغولة ÷ 20 كلي × 100 = 85%" }
       },
       {
-        name: { en: "Average Occupancy (Jun 25 – Jun 26)", ar: "متوسط الإشغال (يونيو 25 – يونيو 26)" },
+        name: { en: "Average Occupancy (Jun 25 - Jun 26)", ar: "متوسط الإشغال (يونيو 25 - يونيو 26)" },
         formula: { en: "Sum of monthly occupancy % ÷ 12.5 months", ar: "مجموع نسب الإشغال الشهرية ÷ 12.5 شهراً" },
-        example: { en: "1006% ÷ 12.5 = 80.5% average", ar: "1006% ÷ 12.5 = متوسط 80.5%" }
+        example: { en: "996.2% ÷ 12.5 = 79.7% average", ar: "996.2% ÷ 12.5 = متوسط 79.7%" }
       }
     ]
   }

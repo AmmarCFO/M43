@@ -111,7 +111,7 @@ export function RevenuePerformance({ isArabic }: RevenuePerformanceProps) {
               {
                 label: { en: "Gross Revenue Collected", ar: "إجمالي الإيرادات المحصلة" },
                 value: Ha,
-                pct: "—",
+                pct: "N/A",
                 bold: true,
                 highlight: false,
                 color: "text-[#1d1d1f]"
@@ -119,7 +119,7 @@ export function RevenuePerformance({ isArabic }: RevenuePerformanceProps) {
               {
                 label: { en: "OTA / Channel Deductions", ar: "خصومات قنوات الحجز والتشغيل" },
                 value: -yM,
-                pct: "—",
+                pct: "N/A",
                 bold: false,
                 highlight: false,
                 color: "text-red-500"
@@ -297,10 +297,10 @@ export function RevenuePerformance({ isArabic }: RevenuePerformanceProps) {
                     }`}
                   >
                     <div className={`p-2.5 ${isCurrentTier ? "text-amber-700" : "text-[#3d3d3d]"}`}>
-                      {tier.min === 0 ? "—" : `SAR ${tier.min.toLocaleString()}`}
+                      {tier.min === 0 ? "-" : `SAR ${tier.min.toLocaleString()}`}
                     </div>
                     <div className={`p-2.5 border-s border-[#F5EFE7] ${isCurrentTier ? "text-amber-700" : "text-[#3d3d3d]"}`}>
-                      {tier.max ? `SAR ${tier.max.toLocaleString()}` : "—"}
+                      {tier.max ? `SAR ${tier.max.toLocaleString()}` : "-"}
                     </div>
                     <div
                       className={`p-2.5 border-s border-[#F5EFE7] text-center font-black ${

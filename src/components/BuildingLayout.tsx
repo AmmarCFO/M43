@@ -17,7 +17,7 @@ export function BuildingLayout({ isArabic }: BuildingLayoutProps) {
     <div id="building-layout-card" className="rounded-2xl border border-[#EDE5DC] overflow-hidden">
       <div className="bg-gradient-to-r from-[#B8865F] to-[#C89565] px-4 py-3 flex items-center justify-between">
         <p className="text-white font-bold text-sm tracking-wide">
-          {isArabic ? "مثوى 43 — التوزيع المعماري" : "Mathwaa 43 — Building Layout"}
+          {isArabic ? "مثوى 43 - التوزيع المعماري" : "Mathwaa 43 - Building Layout"}
         </p>
         <p className="text-white/70 text-xs">
           {isArabic
