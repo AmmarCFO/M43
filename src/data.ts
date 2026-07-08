@@ -13,7 +13,7 @@ export const Db: BuildingFloorLayout[] = [
     level: { en: "Floor 3", ar: "الدور الثالث" },
     bg: "bg-[#EDE5DC]",
     units: [
-      { id: "43-317", type: "1BR", status: "vacant" },
+      { id: "43-317", type: "1BR", status: "occupied" },
       { id: "43-318", type: "1BR", status: "occupied" },
       { id: "43-319", type: "1BR", status: "occupied" },
       { id: "43-320", type: "1BR", status: "occupied" }
@@ -23,12 +23,12 @@ export const Db: BuildingFloorLayout[] = [
     level: { en: "Floor 2", ar: "الدور الثاني" },
     bg: "bg-[#F5EFE7]",
     units: [
-      { id: "43-211", type: "1BR", status: "occupied" },
-      { id: "43-212", type: "1BR", status: "vacant" },
+      { id: "43-211", type: "1BR", status: "vacant" },
+      { id: "43-212", type: "1BR", status: "occupied" },
       { id: "43-213", type: "1BR", status: "occupied" },
       { id: "43-214", type: "1BR", status: "occupied" },
       { id: "43-215", type: "1BR", status: "occupied" },
-      { id: "43-216", type: "1BR", status: "occupied" }
+      { id: "43-216", type: "1BR", status: "vacant" }
     ]
   },
   {
@@ -66,13 +66,13 @@ export const Mb: UnitOccupancyDetail[] = [
   { id: "43-108", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 1", ar: "الدور الأول" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.725 },
   { id: "43-109", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 1", ar: "الدور الأول" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.93 },
   { id: "43-110", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 1", ar: "الدور الأول" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.933 },
-  { id: "43-211", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.692 },
-  { id: "43-212", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 0, aprStatus: "vacant", avgOcc: 0.905 },
+  { id: "43-211", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 0, aprStatus: "vacant", avgOcc: 0.692 },
+  { id: "43-212", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.905 },
   { id: "43-213", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.833 },
   { id: "43-214", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 1 },
   { id: "43-215", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.849 },
-  { id: "43-216", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.919 },
-  { id: "43-317", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 3", ar: "الدور الثالث" }, aprOcc: 0, aprStatus: "vacant", avgOcc: 0.92 },
+  { id: "43-216", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 2", ar: "الدور الثاني" }, aprOcc: 0, aprStatus: "vacant", avgOcc: 0.919 },
+  { id: "43-317", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 3", ar: "الدور الثالث" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.92 },
   { id: "43-318", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 3", ar: "الدور الثالث" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.932 },
   { id: "43-319", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 3", ar: "الدور الثالث" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 0.883 },
   { id: "43-320", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 3", ar: "الدور الثالث" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 1 }
