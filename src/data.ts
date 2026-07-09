@@ -282,13 +282,13 @@ export const tiktokVideos = [
 ];
 
 export const forecastData = {
-  revenue: 900000,
+  revenue: 965000,
   utilityCost: 33160,
-  netRevenue: 866840,
+  netRevenue: 931840,
   ownerSharePct: 80,
-  ownerShare: 693472,
+  ownerShare: 745472,
   mathwaSharePct: 20,
-  mathwaShare: 173368,
+  mathwaShare: 186368,
   directExpenses: [
     { name: { en: "Payroll & Related Exp-One Houseman", ar: "الرواتب والأجور - موظف نظافة" }, amount: 19800 },
     { name: { en: "Property & Guest Supplies", ar: "مستلزمات العقار والضيوف" }, amount: 3000 },
@@ -303,9 +303,9 @@ export const forecastData = {
     { name: { en: "Management Fee (Admin, Finance, HR, Sales, CS)", ar: "رسوم الإدارة (المالية، الموارد البشرية، المبيعات، خدمة العملاء)" }, amount: 60000 }
   ],
   totalExpenses: 133800,
-  costPercentageOfNet: 15,
-  netProfit: 39568,
-  collectionForecast: 950000
+  costPercentageOfNet: 14,
+  netProfit: 52568,
+  collectionForecast: 1000000
 };
 
 export const unitAveragePrices: UnitAveragePrice[] = [
