@@ -62,3 +62,11 @@ export interface TikTokVideo {
   id: string;
   title: LocalizedText;
 }
+
+export interface UnitAveragePrice {
+  id: string;
+  type: LocalizedText;
+  avgPrice2025: number;
+  avgPrice2026: number;
+}
+

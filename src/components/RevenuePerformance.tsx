@@ -23,7 +23,9 @@ import {
   Ji, 
   Rb, 
   wM, 
-  SM 
+  SM,
+  Wa,
+  gM
 } from "../data";
 
 interface RevenuePerformanceProps {
@@ -68,15 +70,15 @@ export function RevenuePerformance({ isArabic }: RevenuePerformanceProps) {
               </p>
               <p className="text-[10px] text-emerald-600 mt-1">
                 {isArabic 
-                  ? `صافي الإيراد ${xM.toLocaleString()} ريال (بعد خصم ${yM.toLocaleString()} ريال مصاريف تشغيلية وقنوات)` 
-                  : `Net Revenue SAR ${xM.toLocaleString()} after SAR ${yM.toLocaleString()} in costs deducted from revenue`
+                  ? `صافي الإيراد ${xM.toLocaleString()} ريال (بعد خصم ${yM.toLocaleString()} ريال تكاليف الكهرباء والمياه والإنترنت)` 
+                  : `Net Revenue SAR ${xM.toLocaleString()} after SAR ${yM.toLocaleString()} in costs deducted from revenue for electricity, water, and internet`
                 }
               </p>
             </div>
 
             <div className="p-3 sm:p-5 bg-[#F5EFE7] rounded-2xl border border-[#EDE5DC] text-center shadow-sm">
               <p className="text-[10px] font-semibold text-[#8B6F47] mb-1 uppercase tracking-wide">
-                {isArabic ? "حصة مثوى المستلمة فعلياً (5.5%)" : "Mathwa Share Actually Received (5.5%)"}
+                {isArabic ? "حصة مثوى المستلمة فعلياً (7%)" : "Mathwa Share Actually Received (7%)"}
               </p>
               <p className="text-lg sm:text-xl font-black text-[#C89565]">
                 SAR {bM.toLocaleString()}
@@ -117,7 +119,10 @@ export function RevenuePerformance({ isArabic }: RevenuePerformanceProps) {
                 color: "text-[#1d1d1f]"
               },
               {
-                label: { en: "Costs deducted from revenue", ar: "التكاليف المخصومة من الإيرادات" },
+                label: { 
+                  en: "Costs deducted from revenue (Electricity, Water, & Internet)", 
+                  ar: "التكاليف المخصومة من الإيرادات (الكهرباء والمياه والإنترنت)" 
+                },
                 value: -yM,
                 pct: "N/A",
                 bold: false,
@@ -133,9 +138,9 @@ export function RevenuePerformance({ isArabic }: RevenuePerformanceProps) {
                 color: "text-[#1d1d1f]"
               },
               {
-                label: { en: "Mathwa Share Paid (5.5%)", ar: "حصة مثوى المستلمة (5.5%)" },
+                label: { en: "Mathwa Share Paid (7%)", ar: "حصة مثوى المستلمة (7%)" },
                 value: bM,
-                pct: "5.5%",
+                pct: "7%",
                 bold: true,
                 highlight: true,
                 color: "text-[#C89565]"
@@ -150,8 +155,8 @@ export function RevenuePerformance({ isArabic }: RevenuePerformanceProps) {
               },
               {
                 label: { en: "Mathwa Net Deficit / Loss", ar: "صافي خسارة تشغيل مثوى" },
-                value: -175289,
-                pct: "-10.4%",
+                value: -gM,
+                pct: "-8.9%",
                 bold: true,
                 highlight: true,
                 color: "text-red-600"
@@ -316,8 +321,8 @@ export function RevenuePerformance({ isArabic }: RevenuePerformanceProps) {
             </div>
             <p className="text-[10px] text-[#B0A08A] italic mt-2">
               {isArabic
-                ? `بناءً على إجمالي الإيرادات المحققة ${Ha.toLocaleString()} ريال، تقع الرسوم نظرياً في شريحة 7% (1,700,001 إلى 1,800,000 ريال) طبقاً للملحق 1، ولكن تم احتسابها في العقد الفعلي بنسبة 5.5% على صافي الإيرادات (ما يعادل 92,311 ريال)، مما أدى إلى عجز تشغيلي كبير.`
-                : `Based on the final achieved Gross Revenue of SAR ${Ha.toLocaleString()}, the fee theoretically falls in the 7% bracket (SAR 1,700,001 to 1,800,000) under Annex 1. However, in practice, a flat 5.5% was applied to Net Revenue (yielding SAR 92,311), causing a substantial operational deficit.`}
+                ? `بناءً على إجمالي الإيرادات المحققة ${Ha.toLocaleString()} ريال، تم تطبيق شريحة رسوم 7% طبقاً للملحق 1 من العقد (ما يعادل 118,034 ريال على صافي الإيرادات)، ولكن نظراً لارتفاع المصاريف الفعلية، فقد أدى ذلك لعجز تشغيلي قدره ${gM.toLocaleString()} ريال.`
+                : `Based on the final achieved Gross Revenue of SAR ${Ha.toLocaleString()}, the contract fee of 7% was applied to Net Revenue (yielding SAR ${bM.toLocaleString()}) under Annex 1. However, due to actual operational expenses, this still resulted in a net deficit of SAR ${gM.toLocaleString()}.`}
             </p>
           </div>
 

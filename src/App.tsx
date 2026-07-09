@@ -16,6 +16,8 @@ import { OccupancyPerformance } from "./components/OccupancyPerformance";
 import { RevenuePerformance } from "./components/RevenuePerformance";
 import { InvestmentBreakdown } from "./components/InvestmentBreakdown";
 import { ContractProposal } from "./components/ContractProposal";
+import { SixMonthForecast } from "./components/SixMonthForecast";
+import { ApartmentPrices } from "./components/ApartmentPrices";
 import { DriveVideoPreview } from "./components/DriveVideoPreview";
 
 import { 
@@ -80,13 +82,13 @@ export default function App() {
     executiveText: {
       en: [
         "This report documents the full performance of Mathwaa's management of Mathwaa 43 in Al Ta'awun throughout the contract period. It covers occupancy results, revenue collected, and marketing activities.",
-        "Most importantly, it includes a transparent breakdown of the real costs we have absorbed, and a clear demonstration that operating at 5.5% is generating net losses that are not sustainable.",
-        "Our goal is to make the case for adjusting contract terms: 15% retroactively on Year 1 to at minimum cover our costs, and 20% on the new contract to ensure this partnership remains viable."
+        "Most importantly, it includes a transparent breakdown of the real costs we have absorbed, and a clear demonstration that operating at 7% is generating net losses that are not sustainable.",
+        "Our goal is to propose an adjustment to the contract terms going forward, increasing the management fee to 20% on the new contract to ensure this partnership remains viable."
       ],
       ar: [
         "يوثّق هذا التقرير الأداء الكامل لإدارة مثوى لمبنى مثوى 43 في حي التعاون خلال فترة العقد. يشمل نتائج الإشغال والإيرادات المحصّلة وأنشطة التسويق.",
-        "والأهم من ذلك، يتضمن تفصيلاً شفافاً للاستثمارات الحقيقية التي قدّمناها نيابةً عن هذا العقار، مع إثبات واضح أن نسبة 5.5% الحالية تُوقع علينا خسائر فعلية.",
-        "هدفنا تقديم حجة واضحة لتعديل شروط العقد: 15% بأثر رجعي على السنة الأولى كحد أدنى لتغطية تكاليفنا، و20% للعقد الجديد لضمان استدامة الشراكة."
+        "والأهم من ذلك، يتضمن تفصيلاً شفافاً للاستثمارات الحقيقية التي قدّمناها نيابةً عن هذا العقار، مع إثبات واضح أن نسبة 7% الحالية تُوقع علينا خسائر فعلية.",
+        "هدفنا تقديم حجة واضحة لتعديل شروط العقد في الفترة القادمة، بزيادة رسوم الإدارة إلى 20% في العقد الجديد لضمان استدامة الشراكة."
       ]
     },
     projectInfo: { en: "Building Overview", ar: "نظرة عامة على المبنى" },
@@ -106,14 +108,14 @@ export default function App() {
     closingText: {
       en: [
         "We entered this partnership committed to delivering results, and the numbers in this report speak for themselves.",
-        "But transparency requires us to be direct: every month we operated under 5.5%, we absorbed losses out of our own pocket. This cannot continue.",
-        "We are proposing a fair path forward: 15% to settle Year 1 at cost, and 20% on the new contract to build a partnership that is sustainable for both sides.",
+        "But transparency requires us to be direct: every month we operated under 7%, we absorbed losses out of our own pocket. This cannot continue.",
+        "We are proposing a fair path forward: setting the management fee to 20% on the new contract to build a partnership that is sustainable for both sides.",
         "We believe in this asset and in this partnership. We just need the terms to reflect the reality of what it takes to operate at this level."
       ],
       ar: [
         "دخلنا هذه الشراكة بالتزام حقيقي بتحقيق النتائج، والأرقام الواردة في هذا التقرير تتحدث عن نفسها.",
-        "لكن الشفافية تقتضي أن نكون صريحين: كل شهر أدرنا المبنى بنسبة 5.5%، تحملنا خسائر من مواردنا الخاصة. هذا الوضع لا يمكن الاستمرار فيه.",
-        "نقترح مساراً عادلاً للمضي قدماً: 15% لتسوية السنة الأولى بما يعادل تكاليفنا، و20% في العقد الجديد لبناء شراكة مستدامة لكلا الطرفين.",
+        "لكن الشفافية تقتضي أن نكون صريحين: كل شهر أدرنا المبنى بنسبة 7%، تحملنا خسائر من مواردنا الخاصة. هذا الوضع لا يمكن الاستمرار فيه.",
+        "نقترح مساراً عادلاً للمضي قدماً: زيادة رسوم الإدارة إلى 20% في العقد الجديد لبناء شراكة مستدامة لكلا الطرفين.",
         "نؤمن بهذا العقار وبهذه الشراكة، نحتاج فقط إلى شروط تعكس حقيقة ما يتطلبه التشغيل بهذا المستوى."
       ]
     }
@@ -490,7 +492,17 @@ export default function App() {
             <RevenuePerformance isArabic={isArabic} />
           </motion.div>
 
-          {/* 7. Investment Breakdown Card (Pfe) */}
+          {/* 7. Apartment Prices Card */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="card-hover"
+          >
+            <ApartmentPrices isArabic={isArabic} />
+          </motion.div>
+
+          {/* 8. Investment Breakdown Card (Pfe) */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -500,7 +512,7 @@ export default function App() {
             <InvestmentBreakdown isArabic={isArabic} />
           </motion.div>
 
-          {/* 8. Marketing Efforts Card */}
+          {/* 9. Marketing Efforts Card */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -619,7 +631,17 @@ export default function App() {
             </div>
           </motion.div>
 
-          {/* 9. Contract Proposal Card (Tfe) */}
+          {/* 10. Six Month Forecast Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="card-hover"
+          >
+            <SixMonthForecast isArabic={isArabic} />
+          </motion.div>
+
+          {/* 11. Contract Proposal Card (Tfe) */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -629,7 +651,7 @@ export default function App() {
             <ContractProposal isArabic={isArabic} />
           </motion.div>
 
-          {/* 10. Closing / Message to Owner Card */}
+          {/* 12. Closing / Message to Owner Card */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

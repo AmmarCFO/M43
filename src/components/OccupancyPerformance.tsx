@@ -75,7 +75,11 @@ export function OccupancyPerformance({ isArabic }: OccupancyPerformanceProps) {
   const [isOpen, setIsOpen] = useState(false);
   const occupiedCount = Mb.filter((u) => u.aprStatus === "occupied").length;
   const totalUnits = Mb.length;
-  const contractAverage = jM.reduce((sum, item) => sum + item.pct, 0) / 12.5;
+  const contractAverage = jM.reduce((sum, item) => {
+    // Jun '25 is Jun 16 to 30 (0.5 month), other months are full (1.0)
+    const weight = item.month.en.startsWith("Jun '25") ? 0.5 : 1.0;
+    return sum + (item.pct * weight);
+  }, 0) / 12.5;
 
   return (
     <div id="occupancy-perf-card" className="border border-[#C89565]/20 shadow-lg bg-white overflow-hidden rounded-2xl">
@@ -131,10 +135,10 @@ export function OccupancyPerformance({ isArabic }: OccupancyPerformanceProps) {
                 {isArabic ? "ذروة الإشغال" : "Peak"}
               </p>
               <p className="text-2xl sm:text-3xl font-black text-[#C89565]">
-                98.7%
+                96%
               </p>
               <p className="text-[9px] text-[#B0A08A] mt-1">
-                {isArabic ? "ديسمبر 2025" : "Dec 2025"}
+                {isArabic ? "نوفمبر 2025" : "Nov 2025"}
               </p>
             </div>
           </div>
@@ -153,8 +157,8 @@ export function OccupancyPerformance({ isArabic }: OccupancyPerformanceProps) {
               isArabic={isArabic}
             />
             <OccupancyDonut
-              label={isArabic ? "ذروة (ديسمبر 25)" : "Peak (Dec 25)"}
-              occupied={Math.round(0.987 * totalUnits)}
+              label={isArabic ? "ذروة (نوفمبر 25)" : "Peak (Nov 25)"}
+              occupied={Math.round(0.96 * totalUnits)}
               total={totalUnits}
               isArabic={isArabic}
             />

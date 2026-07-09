@@ -5,7 +5,8 @@ import {
   MonthlyRevenue, 
   CostItem, 
   InsightItem, 
-  FormulaSection 
+  FormulaSection,
+  UnitAveragePrice
 } from "./types";
 
 export const Db: BuildingFloorLayout[] = [
@@ -78,26 +79,26 @@ export const Mb: UnitOccupancyDetail[] = [
   { id: "43-320", type: { en: "1-Bedroom", ar: "غرفة واحدة" }, floor: { en: "Floor 3", ar: "الدور الثالث" }, aprOcc: 1, aprStatus: "occupied", avgOcc: 1 }
 ];
 
-export const EM = 0.879; // Portfolio Average Occupancy Rate
+export const EM = 0.78; // Portfolio Average Occupancy Rate
 
 export const jM: MonthlyOccupancyPct[] = [
-  { month: { en: "Jun '25", ar: "يونيو 25" }, pct: 0.1295 },
-  { month: { en: "Jul '25", ar: "يوليو 25" }, pct: 0.492 },
-  { month: { en: "Aug '25", ar: "أغسطس 25" }, pct: 0.7015 },
-  { month: { en: "Sep '25", ar: "سبتمبر 25" }, pct: 0.693 },
-  { month: { en: "Oct '25", ar: "أكتوبر 25" }, pct: 0.7015 },
-  { month: { en: "Nov '25", ar: "نوفمبر 25" }, pct: 0.907 },
-  { month: { en: "Dec '25", ar: "ديسمبر 25" }, pct: 0.987 },
-  { month: { en: "Jan '26", ar: "يناير 26" }, pct: 0.897 },
-  { month: { en: "Feb '26", ar: "فبراير 26" }, pct: 0.8395 },
-  { month: { en: "Mar '26", ar: "مارس 26" }, pct: 0.864 },
-  { month: { en: "Apr '26", ar: "أبريل 26" }, pct: 0.95 },
-  { month: { en: "May '26", ar: "مايو 26" }, pct: 0.95 },
-  { month: { en: "Jun '26", ar: "يونيو 26" }, pct: 0.85 }
+  { month: { en: "Jun '25", ar: "يونيو 25" }, pct: 0.26 },
+  { month: { en: "Jul '25", ar: "يوليو 25" }, pct: 0.49 },
+  { month: { en: "Aug '25", ar: "أغسطس 25" }, pct: 0.66 },
+  { month: { en: "Sep '25", ar: "سبتمبر 25" }, pct: 0.69 },
+  { month: { en: "Oct '25", ar: "أكتوبر 25" }, pct: 0.70 },
+  { month: { en: "Nov '25", ar: "نوفمبر 25" }, pct: 0.96 },
+  { month: { en: "Dec '25", ar: "ديسمبر 25" }, pct: 0.94 },
+  { month: { en: "Jan '26", ar: "يناير 26" }, pct: 0.90 },
+  { month: { en: "Feb '26", ar: "فبراير 26" }, pct: 0.84 },
+  { month: { en: "Mar '26", ar: "مارس 26" }, pct: 0.85 },
+  { month: { en: "Apr '26", ar: "أبريل 26" }, pct: 0.85 },
+  { month: { en: "May '26", ar: "مايو 26" }, pct: 0.86 },
+  { month: { en: "Jun '26", ar: "يونيو 26" }, pct: 0.89 }
 ];
 
 export const Ou: MonthlyRevenue[] = [
-  { month: { en: "Jun '25", ar: "يونيو 25" }, revenue: 17761 },
+  { month: { en: "Jun '25", ar: "يونيو 25" }, revenue: 25576 },
   { month: { en: "Jul '25", ar: "يوليو 25" }, revenue: 86493 },
   { month: { en: "Aug '25", ar: "أغسطس 25" }, revenue: 129778 },
   { month: { en: "Sep '25", ar: "سبتمبر 25" }, revenue: 129223 },
@@ -112,14 +113,14 @@ export const Ou: MonthlyRevenue[] = [
   { month: { en: "Jun '26", ar: "يونيو 26" }, revenue: 148000 }
 ];
 
-export const Ha = 1744701; // Actual Gross Collected Revenue (12.5 months / Full Contract)
+export const Ha = 1752516; // Actual Gross Collected Revenue (12.5 months / Full Contract)
 export const yM = 66319;   // Actual Deductions (OTAs & channel fees)
-export const xM = 1678382; // Net Collected Revenue = Ha - yM
-export const bM = 92311;   // Mathwaa share actually received (5.5% on net revenue)
+export const xM = 1686197; // Net Collected Revenue = Ha - yM
+export const bM = 118034;   // Mathwaa share actually received (7% on net revenue)
 
 export const Cfe = 0;       // No remaining forecast
-export const Ji = 1744701;  // Total Gross Revenue = Ha
-export const Rb = 92311;    // Mathwaa share actually received
+export const Ji = 1752516;  // Total Gross Revenue = Ha
+export const Rb = 118034;    // Mathwaa share actually received
 export const wM = 100;      // 100% completed!
 
 export const SM = 2447487; // Full Occupancy Book Value (12.5 months)
@@ -162,9 +163,9 @@ export const os = 150000; // Total Indirect Costs
 export const Eu = as + os; // Total Mathwaa Investment = 267,600
 
 export const Wa = 267600;  // Operating Costs for Year 1 (which matches total expenses)
-export const c$ = 1678382; // Actual Net Revenue for Renewal comparison
-export const tS = 92311;   // Mathwaa actual current earnings received (5.5% of net)
-export const gM = 175289;  // Net Loss under 5.5% actuals = 175,289
+export const c$ = 1686197; // Actual Net Revenue for Renewal comparison
+export const tS = 118034;   // Mathwaa actual current earnings received (7% of net)
+export const gM = 149566;  // Net Loss under 7% actuals = 149,566
 export const vM = Math.round(c$ * 0.15); // Mathwaa retroactive earnings at 15% = 251,757
 export const f$ = 1800000; // Estimated Year 2 Revenue
 export const Ud = Math.round(f$ * 0.2); // Mathwaa earnings at 20% on Year 2 = 360,000
@@ -175,8 +176,8 @@ export const insightsData: InsightItem[] = [
     color: "bg-emerald-50 border-emerald-100",
     labelColor: "text-emerald-700",
     items: [
-      { en: "Average occupancy of 80% over the full 12.5-month contract, maintaining 85% in June 2026.", ar: "بلغ متوسط الإشغال 80% طوال فترة العقد الكاملة البالغة 12.5 شهراً، مع الحفاظ على نسبة 85% في يونيو 2026." },
-      { en: "Peak occupancy of 98.7% was achieved in December 2025.", ar: "تم تحقيق ذروة الإشغال 98.7% في ديسمبر 2025." }
+      { en: "Average occupancy of 78% over the full 12.5-month contract, maintaining 89% in June 2026.", ar: "بلغ متوسط الإشغال 78% طوال فترة العقد الكاملة البالغة 12.5 شهراً، مع الحفاظ على نسبة 89% في يونيو 2026." },
+      { en: "Peak occupancy of 96% was achieved in November 2025.", ar: "تم تحقيق ذروة الإشغال 96% في نوفمبر 2025." }
     ]
   },
   {
@@ -184,8 +185,8 @@ export const insightsData: InsightItem[] = [
     color: "bg-blue-50 border-blue-100",
     labelColor: "text-blue-700",
     items: [
-      { en: "SAR 1,744,701 collected over the full contract period (June 16, 2025 to June 30, 2026).", ar: "تم تحصيل 1,744,701 ريال طوال فترة العقد الكاملة (16 يونيو 2025 إلى 30 يونيو 2026)." },
-      { en: "Net revenue after deductions of SAR 66,319 stands at SAR 1,678,382.", ar: "بلغ صافي الإيراد بعد خصومات بلغت 66,319 ريال ما قيمته 1,678,382 ريال." }
+      { en: "SAR 1,752,516 collected over the full contract period (June 16, 2025 to June 30, 2026).", ar: "تم تحصيل 1,752,516 ريال طوال فترة العقد الكاملة (16 يونيو 2025 إلى 30 يونيو 2026)." },
+      { en: "Net revenue stands at SAR 1,686,197 after SAR 66,319 in costs deducted from revenue for electricity, water, and internet.", ar: "بلغ صافي الإيراد 1,686,197 ريال بعد خصم تكاليف الكهرباء والمياه والإنترنت البالغة 66,319 ريال من إجمالي الإيرادات." }
     ]
   },
   {
@@ -212,27 +213,27 @@ export const formulasData: FormulaSection[] = [
       {
         name: { en: "Average Monthly Revenue", ar: "متوسط الإيراد الشهري" },
         formula: { en: "Sum of monthly revenues ÷ 12.5 contract months", ar: "مجموع الإيرادات الشهرية ÷ 12.5 شهراً تعاقدياً" },
-        example: { en: "SAR 1,744,701 ÷ 12.5 = SAR 139,576/mo", ar: "1,744,701 ريال ÷ 12.5 = 139,576 ريال/شهر" }
+        example: { en: "SAR 1,752,516 ÷ 12.5 = SAR 140,201/mo", ar: "1,752,516 ريال ÷ 12.5 = 140,201 ريال/شهر" }
       },
       {
-        name: { en: "Mathwa Share (5.5%)", ar: "حصة مثوى (5.5%)" },
-        formula: { en: "Net Revenue × 5.5%", ar: "صافي الإيرادات × 5.5%" },
-        example: { en: "SAR 1,678,382 × 5.5% = SAR 92,311", ar: "1,678,382 ريال × 5.5% = 92,311 ريال" }
+        name: { en: "Mathwa Share (7%)", ar: "حصة مثوى (7%)" },
+        formula: { en: "Net Revenue × 7%", ar: "صافي الإيرادات × 7%" },
+        example: { en: "SAR 1,686,197 × 7% = SAR 118,034", ar: "1,686,197 ريال × 7% = 118,034 ريال" }
       },
       {
         name: { en: "Net Revenue", ar: "صافي الإيرادات" },
-        formula: { en: "Gross Revenue - Costs deducted from revenue", ar: "إجمالي الإيرادات - التكاليف المخصومة من الإيرادات" },
-        example: { en: "SAR 1,744,701 - SAR 66,319 = SAR 1,678,382", ar: "1,744,701 ريال - 66,319 ريال = 1,678,382 ريال" }
+        formula: { en: "Gross Revenue - Costs deducted from revenue (Electricity, Water, & Internet)", ar: "إجمالي الإيرادات - التكاليف المخصومة من الإيرادات (الكهرباء والمياه والإنترنت)" },
+        example: { en: "SAR 1,752,516 - SAR 66,319 = SAR 1,686,197", ar: "1,752,516 ريال - 66,319 ريال = 1,686,197 ريال" }
       },
       {
         name: { en: "Revenue Progress %", ar: "نسبة تقدم الإيرادات" },
         formula: { en: "Actual Collected ÷ Total Forecast × 100", ar: "المحصّل فعلياً ÷ إجمالي التوقعات × 100" },
-        example: { en: "SAR 1,744,701 ÷ SAR 1,744,701 × 100 = 100% (Completed)", ar: "1,744,701 ÷ 1,744,701 × 100 = 100% (مكتمل)" }
+        example: { en: "SAR 1,752,516 ÷ SAR 1,752,516 × 100 = 100% (Completed)", ar: "1,752,516 ÷ 1,752,516 × 100 = 100% (مكتمل)" }
       },
       {
         name: { en: "Achievement Rate (vs Full Occupancy)", ar: "نسبة التحقيق (مقارنة بالإشغال الكامل)" },
         formula: { en: "Actual Collected ÷ Full Occupancy Book Value × 100", ar: "المحصّل فعلياً ÷ قيمة الإشغال الكامل × 100" },
-        example: { en: "SAR 1,744,701 ÷ SAR 2,447,487 × 100 = 71.3%", ar: "1,744,701 ÷ 2,447,487 × 100 = 71.3%" }
+        example: { en: "SAR 1,752,516 ÷ SAR 2,447,487 × 100 = 71.6%", ar: "1,752,516 ÷ 2,447,487 × 100 = 71.6%" }
       }
     ]
   },
@@ -278,4 +279,54 @@ export const tiktokVideos = [
   { id: "7558384482475166983", title: { en: "TikTok Ad Campaign 2", ar: "حملة تيك توك الإعلانية 2" } },
   { id: "7558383550630808839", title: { en: "TikTok Ad Campaign 3", ar: "حملة تيك توك الإعلانية 3" } },
   { id: "7558380776576847122", title: { en: "TikTok Ad Campaign 4", ar: "حملة تيك توك الإعلانية 4" } }
+];
+
+export const forecastData = {
+  revenue: 900000,
+  utilityCost: 33160,
+  netRevenue: 866840,
+  ownerSharePct: 80,
+  ownerShare: 693472,
+  mathwaSharePct: 20,
+  mathwaShare: 173368,
+  directExpenses: [
+    { name: { en: "Payroll & Related Exp-One Houseman", ar: "الرواتب والأجور - موظف نظافة" }, amount: 19800 },
+    { name: { en: "Property & Guest Supplies", ar: "مستلزمات العقار والضيوف" }, amount: 3000 },
+    { name: { en: "Maintenance", ar: "أعمال الصيانة" }, amount: 9000 },
+    { name: { en: "Laundry", ar: "المغسلة" }, amount: 6000 },
+    { name: { en: "Supervisor & Operation Support", ar: "مشرف العمليات والدعم التشغيلي" }, amount: 9000 },
+    { name: { en: "Car Rent & Fuel", ar: "إيجار السيارة والوقود" }, amount: 12000 }
+  ],
+  indirectExpenses: [
+    { name: { en: "Marketing Expenses", ar: "مصاريف التسويق" }, amount: 12000 },
+    { name: { en: "Reservation System", ar: "نظام إدارة الحجوزات" }, amount: 3000 },
+    { name: { en: "Management Fee (Admin, Finance, HR, Sales, CS)", ar: "رسوم الإدارة (المالية، الموارد البشرية، المبيعات، خدمة العملاء)" }, amount: 60000 }
+  ],
+  totalExpenses: 133800,
+  costPercentageOfNet: 15,
+  netProfit: 39568,
+  collectionForecast: 950000
+};
+
+export const unitAveragePrices: UnitAveragePrice[] = [
+  { id: "43-105", type: { en: "Suite - 1BR", ar: "جناح - غرفة وصالة" }, avgPrice2025: 11000, avgPrice2026: 10750 },
+  { id: "43-106", type: { en: "Suite - 1BR", ar: "جناح - غرفة وصالة" }, avgPrice2025: 6564, avgPrice2026: 6557 },
+  { id: "43-107", type: { en: "Suite - 1BR", ar: "جناح - غرفة وصالة" }, avgPrice2025: 9800, avgPrice2026: 9556 },
+  { id: "43-108", type: { en: "Suite - 1BR", ar: "جناح - غرفة وصالة" }, avgPrice2025: 11233, avgPrice2026: 9892 },
+  { id: "43-109", type: { en: "Suite - 1BR", ar: "جناح - غرفة وصالة" }, avgPrice2025: 6570, avgPrice2026: 6570 },
+  { id: "43-110", type: { en: "Suite - 1BR", ar: "جناح - غرفة وصالة" }, avgPrice2025: 9550, avgPrice2026: 9550 },
+  { id: "43-001", type: { en: "2BR", ar: "شقة غرفتين وصالة" }, avgPrice2025: 9000, avgPrice2026: 9000 },
+  { id: "43-002", type: { en: "2BR", ar: "شقة غرفتين وصالة" }, avgPrice2025: 15250, avgPrice2026: 12500 },
+  { id: "43-003", type: { en: "2BR", ar: "شقة غرفتين وصالة" }, avgPrice2025: 11223, avgPrice2026: 11000 },
+  { id: "43-004", type: { en: "2BR", ar: "شقة غرفتين وصالة" }, avgPrice2025: 10719, avgPrice2026: 9750 },
+  { id: "43-211", type: { en: "Suite - 1BR", ar: "جناح - غرفة وصالة" }, avgPrice2025: 5457, avgPrice2026: 9000 },
+  { id: "43-212", type: { en: "Suite - 1BR", ar: "جناح - غرفة وصالة" }, avgPrice2025: 6380, avgPrice2026: 6000 },
+  { id: "43-213", type: { en: "Suite - 1BR", ar: "جناح - غرفة وصالة" }, avgPrice2025: 10752, avgPrice2026: 9556 },
+  { id: "43-214", type: { en: "Suite - 1BR", ar: "جناح - غرفة وصالة" }, avgPrice2025: 9865, avgPrice2026: 9865 },
+  { id: "43-215", type: { en: "Suite - 1BR", ar: "جناح - غرفة وصالة" }, avgPrice2025: 7150, avgPrice2026: 7000 },
+  { id: "43-216", type: { en: "Suite - 1BR", ar: "جناح - غرفة وصالة" }, avgPrice2025: 10620, avgPrice2026: 10620 },
+  { id: "43-317", type: { en: "Suite - 1BR", ar: "جناح - غرفة وصالة" }, avgPrice2025: 6059, avgPrice2026: 5500 },
+  { id: "43-318", type: { en: "Suite - 1BR", ar: "جناح - غرفة وصالة" }, avgPrice2025: 8500, avgPrice2026: 8500 },
+  { id: "43-319", type: { en: "Suite - 1BR", ar: "جناح - غرفة وصالة" }, avgPrice2025: 9000, avgPrice2026: 7898 },
+  { id: "43-320", type: { en: "Suite - 1BR", ar: "جناح - غرفة وصالة" }, avgPrice2025: 8500, avgPrice2026: 8500 }
 ];
