@@ -6,9 +6,11 @@ import {
   c$, 
   tS, 
   gM, 
-  vM, 
   f$, 
-  Ud 
+  Ud,
+  Ha,
+  as as directCosts,
+  xM as netRevenue
 } from "../data";
 
 interface ContractProposalProps {
@@ -31,7 +33,7 @@ export function ContractProposal({ isArabic }: ContractProposalProps) {
               paddingInlineStart: "14px",
             }}
           >
-            {isArabic ? "طلب إعادة النظر ورسوم التجديد" : "Contract Proposal & Renewal"}
+            {isArabic ? "مقترح تجديد العقد ورسوم الإدارة" : "Contract Renewal & Proposed Fees"}
           </h2>
         </div>
 
@@ -39,8 +41,8 @@ export function ContractProposal({ isArabic }: ContractProposalProps) {
         <div className="ms-0 sm:ms-[64px] space-y-6">
           <p className="text-[#3d3d3d] leading-relaxed text-sm">
             {isArabic
-              ? "استناداً إلى تحليل التكاليف والإيرادات والجهود المبذولة لترقية وإشغال العقار، نتقدم بهذا المقترح لإعادة هيكلة شروط التعاقد بما يحقق استدامة تشغيل المبنى بكفاءة عالية:"
-              : "Based on detailed analysis of operational costs, actual revenues, and the extensive upgrade and lease efforts, we present this proposal to restructure terms to ensure the property's premium, sustainable operation:"}
+              ? "استناداً إلى تحليل التكاليف والإيرادات والجهود المبذولة لترقية وإشغال العقار، نتقدم بهذا المقترح لتجديد التعاقد للعام الثاني بما يحقق استدامة تشغيل المبنى بكفاءة عالية:"
+              : "Based on detailed analysis of operational costs, actual revenues, and the extensive upgrade and lease efforts, we present this proposal for Year 2 contract renewal to ensure the property's premium, sustainable operation:"}
           </p>
 
           {/* Current Year Analysis Table */}
@@ -52,63 +54,59 @@ export function ContractProposal({ isArabic }: ContractProposalProps) {
             </div>
             
             <div className="divide-y divide-[#F5EFE7] text-xs sm:text-sm">
-              <div className="p-3.5 flex justify-between">
-                <span className="text-[#3d3d3d]">{isArabic ? "تكاليف التشغيل الفعلية التي تحملتها مثوى" : "Mathwaa Actual Operating Costs (Direct + Indirect)"}</span>
-                <span className="font-mono font-bold text-[#1d1d1f]">SAR {Wa.toLocaleString()}</span>
+              {/* Total Revenue (Gross) */}
+              <div className="p-3.5 flex justify-between bg-white">
+                <span className="text-[#3d3d3d] font-semibold">{isArabic ? "إجمالي الإيرادات (قبل الخصم)" : "Total Revenue (Gross)"}</span>
+                <span className="font-mono font-bold text-[#1d1d1f]">SAR {Ha.toLocaleString()}</span>
               </div>
-              <div className="p-3.5 flex justify-between">
-                <span className="text-[#3d3d3d]">{isArabic ? "عائدات مثوى المستلمة فعلياً (5.5% من صافي الإيراد)" : "Mathwaa Share Received (5.5% of net revenue)"}</span>
-                <span className="font-mono font-bold text-[#1d1d1f]">SAR {tS.toLocaleString()}</span>
+              
+              {/* Net Revenue */}
+              <div className="p-3.5 flex justify-between bg-white">
+                <span className="text-[#3d3d3d]">{isArabic ? "صافي الإيرادات (بعد التكاليف المخصومة من الإيرادات)" : "Net Revenue (after Costs deducted from revenue)"}</span>
+                <span className="font-mono font-bold text-[#1d1d1f]">SAR {netRevenue.toLocaleString()}</span>
               </div>
+
+              {/* Total Direct Expenses */}
+              <div className="p-3.5 flex flex-col sm:flex-row justify-between bg-white gap-2">
+                <div className="text-[#3d3d3d]">
+                  <p className="font-semibold">{isArabic ? "إجمالي المصاريف المباشرة" : "Total Direct Expenses"}</p>
+                  <p className="text-[11px] text-gray-500 max-w-md mt-1 leading-relaxed">
+                    {isArabic 
+                      ? "(رواتب موظف النظافة الداخلي، مستلزمات العقار والضيوف، الصيانة والإصلاحات، خدمات الغسيل والمفروشات، مشرف العمليات والدعم التشغيلي، إيجار المركبة والوقود، إلخ)"
+                      : "(Payroll & Related Exp - One Houseman, Property & Guest Supplies, Maintenance, Laundry, Supervisor & Operation Support, Car Rent & Fuel, etc.)"
+                    }
+                  </p>
+                </div>
+                <span className="font-mono font-semibold text-[#3d3d3d] self-start sm:self-center">SAR {directCosts.toLocaleString()}</span>
+              </div>
+
+              {/* Total Mathwa's Share (That it took) */}
+              <div className="p-3.5 flex justify-between bg-[#FAF8F5]/30">
+                <span className="text-[#3d3d3d] font-semibold">{isArabic ? "حصة مثوى الفعلية المستلمة (5.5% من صافي الإيراد)" : "Total Mathwa's Share Received (5.5%)"}</span>
+                <span className="font-mono font-bold text-[#C89565]">SAR {tS.toLocaleString()}</span>
+              </div>
+
+              {/* Total remaining for the owner */}
+              <div className="p-3.5 flex justify-between bg-emerald-50/30">
+                <span className="text-emerald-800 font-bold">{isArabic ? "إجمالي المتبقي للمالك" : "Total Remaining for the Owner"}</span>
+                <span className="font-mono font-black text-emerald-700">SAR {(netRevenue - tS).toLocaleString()}</span>
+              </div>
+
+              {/* Mathwaa Total Operating Costs (Direct + Indirect) */}
+              <div className="p-3.5 flex justify-between bg-white">
+                <span className="text-[#3d3d3d]">{isArabic ? "تكاليف التشغيل الفعلية التي تحملتها مثوى (مباشرة وغير مباشرة)" : "Mathwaa Actual Operating Costs (Direct + Indirect)"}</span>
+                <span className="font-mono font-semibold text-[#3d3d3d]">SAR {Wa.toLocaleString()}</span>
+              </div>
+
+              {/* Mathwaa Net Operating Loss / Deficit */}
               <div className="p-3.5 flex justify-between bg-red-50/50">
-                <span className="text-red-700 font-semibold">{isArabic ? "صافي خسارة تشغيل مثوى (16% تكاليف من صافي الإيراد)" : "Mathwaa Net Operating Loss / Deficit (16% cost ratio)"}</span>
+                <span className="text-red-700 font-semibold">{isArabic ? "صافي عجز خسارة التشغيل لمثوى" : "Mathwaa Net Operating Loss / Deficit"}</span>
                 <span className="font-mono font-bold text-red-600">-SAR {gM.toLocaleString()}</span>
               </div>
             </div>
           </div>
 
-          {/* Proposed Changes Container */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Retroactive Settlement */}
-            <div className="p-5 rounded-2xl border-2 border-amber-200 bg-amber-50/40 relative overflow-hidden shadow-sm flex flex-col justify-between">
-              <div>
-                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold bg-amber-100 text-amber-800 border border-amber-200 mb-2.5">
-                  {isArabic ? "طلب تسوية رجعية" : "Retroactive Settlement"}
-                </span>
-                <p className="text-xs text-[#8B6F47] font-semibold uppercase tracking-wider mb-2">
-                  {isArabic ? "تسوية العام الأول (15%)" : "Year 1 Adjustment to 15%"}
-                </p>
-                <p className="text-2xl font-black text-[#C89565] mb-2">
-                  SAR {vM.toLocaleString()}
-                </p>
-                <p className="text-xs text-[#3d3d3d] leading-relaxed">
-                  {isArabic
-                    ? "طلب تسوية رسوم العام الأول بأثر رجعي لتصبح 15% من صافي الإيرادات، لتغطية التكاليف التشغيلية الفعلية وإلغاء عجز التشغيل."
-                    : "Request retroactive adjustment of Year 1 management fees to 15% of net revenues, aligning with actual operating expenditures."}
-                </p>
-              </div>
-            </div>
 
-            {/* Year 2 Renewal Proposed Fee */}
-            <div className="p-5 rounded-2xl border-2 border-[#C89565]/40 bg-[#FAF8F5] relative overflow-hidden shadow-sm flex flex-col justify-between">
-              <div>
-                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold bg-[#C89565]/10 text-[#8B6F47] border border-[#C89565]/20 mb-2.5">
-                  {isArabic ? "التجديد المقترح للعام الثاني" : "Year 2 Renewal Term"}
-                </span>
-                <p className="text-xs text-[#8B6F47] font-semibold uppercase tracking-wider mb-2">
-                  {isArabic ? "رسوم إدارة العام الثاني (20%)" : "Proposed Year 2 Fee (20%)"}
-                </p>
-                <p className="text-2xl font-black text-amber-600 mb-2">
-                  SAR {Ud.toLocaleString()}
-                </p>
-                <p className="text-xs text-[#3d3d3d] leading-relaxed">
-                  {isArabic
-                    ? `تحديد رسوم العام الثاني بنسبة ثابتة 20% من صافي الإيرادات (التوقع المقدر لصافي الإيرادات ${f$.toLocaleString()} ريال لعام كامل).`
-                    : `Set Year 2 management fee at 20% flat of net revenues (based on a full-year conservative revenue target of SAR ${f$.toLocaleString()}).`}
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

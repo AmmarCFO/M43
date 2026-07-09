@@ -80,12 +80,12 @@ export default function App() {
     executiveText: {
       en: [
         "This report documents the full performance of Mathwaa's management of Mathwaa 43 in Al Ta'awun throughout the contract period. It covers occupancy results, revenue collected, and marketing activities.",
-        "Most importantly, it includes a transparent breakdown of the real costs we have absorbed, and a clear demonstration that operating at 7% is generating net losses that are not sustainable.",
+        "Most importantly, it includes a transparent breakdown of the real costs we have absorbed, and a clear demonstration that operating at 5.5% is generating net losses that are not sustainable.",
         "Our goal is to make the case for adjusting contract terms: 15% retroactively on Year 1 to at minimum cover our costs, and 20% on the new contract to ensure this partnership remains viable."
       ],
       ar: [
         "يوثّق هذا التقرير الأداء الكامل لإدارة مثوى لمبنى مثوى 43 في حي التعاون خلال فترة العقد. يشمل نتائج الإشغال والإيرادات المحصّلة وأنشطة التسويق.",
-        "والأهم من ذلك، يتضمن تفصيلاً شفافاً للاستثمارات الحقيقية التي قدّمناها نيابةً عن هذا العقار، مع إثبات واضح أن نسبة 7% الحالية تُوقع علينا خسائر فعلية.",
+        "والأهم من ذلك، يتضمن تفصيلاً شفافاً للاستثمارات الحقيقية التي قدّمناها نيابةً عن هذا العقار، مع إثبات واضح أن نسبة 5.5% الحالية تُوقع علينا خسائر فعلية.",
         "هدفنا تقديم حجة واضحة لتعديل شروط العقد: 15% بأثر رجعي على السنة الأولى كحد أدنى لتغطية تكاليفنا، و20% للعقد الجديد لضمان استدامة الشراكة."
       ]
     },
@@ -106,13 +106,13 @@ export default function App() {
     closingText: {
       en: [
         "We entered this partnership committed to delivering results, and the numbers in this report speak for themselves.",
-        "But transparency requires us to be direct: every month we operated under 7%, we absorbed losses out of our own pocket. This cannot continue.",
+        "But transparency requires us to be direct: every month we operated under 5.5%, we absorbed losses out of our own pocket. This cannot continue.",
         "We are proposing a fair path forward: 15% to settle Year 1 at cost, and 20% on the new contract to build a partnership that is sustainable for both sides.",
         "We believe in this asset and in this partnership. We just need the terms to reflect the reality of what it takes to operate at this level."
       ],
       ar: [
         "دخلنا هذه الشراكة بالتزام حقيقي بتحقيق النتائج، والأرقام الواردة في هذا التقرير تتحدث عن نفسها.",
-        "لكن الشفافية تقتضي أن نكون صريحين: كل شهر أدرنا المبنى بنسبة 7%، تحملنا خسائر من مواردنا الخاصة. هذا الوضع لا يمكن الاستمرار فيه.",
+        "لكن الشفافية تقتضي أن نكون صريحين: كل شهر أدرنا المبنى بنسبة 5.5%، تحملنا خسائر من مواردنا الخاصة. هذا الوضع لا يمكن الاستمرار فيه.",
         "نقترح مساراً عادلاً للمضي قدماً: 15% لتسوية السنة الأولى بما يعادل تكاليفنا، و20% في العقد الجديد لبناء شراكة مستدامة لكلا الطرفين.",
         "نؤمن بهذا العقار وبهذه الشراكة، نحتاج فقط إلى شروط تعكس حقيقة ما يتطلبه التشغيل بهذا المستوى."
       ]
@@ -534,26 +534,7 @@ export default function App() {
                   />
                 </div>
 
-                {/* Marketing stats list */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 my-4">
-                  {[
-                    { label: { en: "Paid Ad Spend (Meta)", ar: "إنفاق إعلاني مدفوع (ميتا)" }, value: "SAR 4,594" },
-                    { label: { en: "Bookings from Digital Ads", ar: "حجوزات من الإعلانات الرقمية" }, value: "8" },
-                    { label: { en: "Organic TikTok Views", ar: "مشاهدات تيك توك العضوية" }, value: "186,000+" }
-                  ].map((stat, idx) => (
-                    <div 
-                      key={idx} 
-                      className="bg-gradient-to-br from-[#F5EFE7] to-[#EDE5DC] rounded-2xl p-3 sm:p-4 border border-[#C89565]/20 text-center"
-                    >
-                      <p className="text-base sm:text-lg font-black text-[#1d1d1f] leading-tight">
-                        {stat.value}
-                      </p>
-                      <p className="text-[9px] font-semibold text-[#8B6F47] uppercase tracking-wide mt-1">
-                        {stat.label[lang]}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+
 
                 {/* Bullet points list of marketing campaigns */}
                 <div className="space-y-2.5">

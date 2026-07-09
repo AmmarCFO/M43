@@ -69,7 +69,7 @@ export function RevenuePerformance({ isArabic }: RevenuePerformanceProps) {
               <p className="text-[10px] text-emerald-600 mt-1">
                 {isArabic 
                   ? `صافي الإيراد ${xM.toLocaleString()} ريال (بعد خصم ${yM.toLocaleString()} ريال مصاريف تشغيلية وقنوات)` 
-                  : `Net Revenue SAR ${xM.toLocaleString()} after SAR ${yM.toLocaleString()} OTA/channel deductions`
+                  : `Net Revenue SAR ${xM.toLocaleString()} after SAR ${yM.toLocaleString()} in costs deducted from revenue`
                 }
               </p>
             </div>
@@ -117,7 +117,7 @@ export function RevenuePerformance({ isArabic }: RevenuePerformanceProps) {
                 color: "text-[#1d1d1f]"
               },
               {
-                label: { en: "OTA / Channel Deductions", ar: "خصومات قنوات الحجز والتشغيل" },
+                label: { en: "Costs deducted from revenue", ar: "التكاليف المخصومة من الإيرادات" },
                 value: -yM,
                 pct: "N/A",
                 bold: false,

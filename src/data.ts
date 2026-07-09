@@ -202,8 +202,7 @@ export const insightsData: InsightItem[] = [
 export const marketingCampaigns = [
   { en: "Listing on Bayut and Wasalt with professional photography and optimized descriptions", ar: "الإدراج على بيوت ووصلت مع تصوير احترافي وأوصاف محسّنة" },
   { en: "Targeted paid ad campaigns on TikTok and Meta (Instagram & Facebook)", ar: "حملات إعلانية مدفوعة على تيك توك وميتا (انستغرام وفيسبوك)" },
-  { en: "WhatsApp follow-up system for all incoming leads", ar: "نظام متابعة واتساب لجميع العملاء المحتملين" },
-  { en: "B2B sales efforts - e.g. Unit 43-002 is occupied through a B2B corporate lead", ar: "جهود المبيعات B2B - مثال: الوحدة 43-002 مشغولة بموجب عقد مع عميل مؤسسي" }
+  { en: "WhatsApp follow-up system for all incoming leads", ar: "نظام متابعة واتساب لجميع العملاء المحتملين" }
 ];
 
 export const formulasData: FormulaSection[] = [
@@ -222,7 +221,7 @@ export const formulasData: FormulaSection[] = [
       },
       {
         name: { en: "Net Revenue", ar: "صافي الإيرادات" },
-        formula: { en: "Gross Revenue - OTA/Channel Deductions", ar: "إجمالي الإيرادات - خصومات قنوات الحجز (OTAs)" },
+        formula: { en: "Gross Revenue - Costs deducted from revenue", ar: "إجمالي الإيرادات - التكاليف المخصومة من الإيرادات" },
         example: { en: "SAR 1,744,701 - SAR 66,319 = SAR 1,678,382", ar: "1,744,701 ريال - 66,319 ريال = 1,678,382 ريال" }
       },
       {

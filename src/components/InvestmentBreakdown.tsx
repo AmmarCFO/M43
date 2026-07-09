@@ -54,45 +54,20 @@ export function InvestmentBreakdown({ isArabic }: InvestmentBreakdownProps) {
           </div>
 
           {/* Cost Items Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Direct Costs */}
-            <div className="rounded-2xl border border-[#EDE5DC] overflow-hidden bg-white">
-              <div className="bg-gradient-to-r from-[#B8865F] to-[#C89565] text-white text-xs font-bold px-3 py-2.5 flex justify-between">
-                <span>{isArabic ? "التكاليف التشغيلية المباشرة" : "Direct Operational Costs"}</span>
-                <span>SAR {as.toLocaleString()}</span>
-              </div>
-              <div className="divide-y divide-[#F5EFE7] text-xs">
-                {l$.map((item, idx) => (
-                  <div key={idx} className="p-3 flex justify-between hover:bg-[#FAF8F5] transition-colors">
-                    <span className="text-[#3d3d3d] font-medium leading-relaxed max-w-[70%]">
-                      {item[lang]}
-                    </span>
-                    <span className="text-[#1d1d1f] font-mono font-semibold">
-                      SAR {item.amount.toLocaleString()}
-                    </span>
-                  </div>
-                ))}
-              </div>
+          <div className="rounded-2xl border border-[#EDE5DC] overflow-hidden bg-white shadow-sm">
+            <div className="bg-gradient-to-r from-[#B8865F] to-[#C89565] text-white text-xs sm:text-sm font-bold px-4 py-3 flex justify-between items-center">
+              <span>{isArabic ? "إجمالي المصاريف المباشرة وغير المباشرة" : "Total Direct & Indirect Expenses"}</span>
+              <span className="font-mono font-black">SAR {Eu.toLocaleString()}</span>
             </div>
-
-            {/* Indirect Costs */}
-            <div className="rounded-2xl border border-[#EDE5DC] overflow-hidden bg-white">
-              <div className="bg-gradient-to-r from-[#B8865F] to-[#C89565] text-white text-xs font-bold px-3 py-2.5 flex justify-between">
-                <span>{isArabic ? "التكاليف التشغيلية غير المباشرة" : "Indirect Operational Costs"}</span>
-                <span>SAR {os.toLocaleString()}</span>
-              </div>
-              <div className="divide-y divide-[#F5EFE7] text-xs">
-                {u$.map((item, idx) => (
-                  <div key={idx} className="p-3 flex justify-between hover:bg-[#FAF8F5] transition-colors">
-                    <span className="text-[#3d3d3d] font-medium leading-relaxed max-w-[70%]">
-                      {item[lang]}
-                    </span>
-                    <span className="text-[#1d1d1f] font-mono font-semibold">
-                      SAR {item.amount.toLocaleString()}
-                    </span>
-                  </div>
-                ))}
-              </div>
+            <div className="divide-y divide-[#F5EFE7] text-xs sm:text-sm">
+              {[...l$, ...u$].map((item, idx) => (
+                <div key={idx} className="p-3.5 flex items-center gap-3 hover:bg-[#FAF8F5] transition-colors">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#C89565] flex-shrink-0" />
+                  <span className="text-[#3d3d3d] font-medium leading-relaxed">
+                    {item[lang]}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
