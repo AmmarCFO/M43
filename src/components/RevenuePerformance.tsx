@@ -321,7 +321,7 @@ export function RevenuePerformance({ isArabic }: RevenuePerformanceProps) {
             </div>
             <p className="text-[10px] text-[#B0A08A] italic mt-2">
               {isArabic
-                ? `بناءً على إجمالي الإيرادات المحققة ${Ha.toLocaleString()} ريال، تم تطبيق شريحة رسوم 7% طبقاً للملحق 1 من العقد (ما يعادل 118,034 ريال على صافي الإيرادات)، ولكن نظراً لارتفاع المصاريف الفعلية، فقد أدى ذلك لعجز تشغيلي قدره ${gM.toLocaleString()} ريال.`
+                ? `بناءً على إجمالي الإيرادات المحققة ${Ha.toLocaleString()} ريال، تم تطبيق شريحة رسوم 7% طبقاً للملحق 1 من العقد (ما يعادل ${bM.toLocaleString()} ريال على صافي الإيرادات)، ولكن نظراً لارتفاع المصاريف الفعلية، فقد أدى ذلك لعجز تشغيلي قدره ${gM.toLocaleString()} ريال.`
                 : `Based on the final achieved Gross Revenue of SAR ${Ha.toLocaleString()}, the contract fee of 7% was applied to Net Revenue (yielding SAR ${bM.toLocaleString()}) under Annex 1. However, due to actual operational expenses, this still resulted in a net deficit of SAR ${gM.toLocaleString()}.`}
             </p>
           </div>

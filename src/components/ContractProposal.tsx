@@ -9,6 +9,7 @@ import {
   f$, 
   Ud,
   Ha,
+  yM,
   xM as netRevenue,
   vM
 } from "../data";
@@ -72,8 +73,8 @@ export function ContractProposal({ isArabic }: ContractProposalProps) {
                     </div>
                     <p className="text-[10px] text-gray-500 leading-relaxed">
                       {isArabic 
-                        ? "(بعد خصم تكاليف الكهرباء والمياه والإنترنت البالغة 66,319 ريال من الإيرادات)"
-                        : "(after SAR 66,319 in costs deducted from revenue for electricity, water, and internet)"
+                        ? `(بعد خصم تكاليف الكهرباء والمياه والإنترنت البالغة ${yM.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 })} ريال من الإيرادات)`
+                        : `(after SAR ${yM.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 })} in costs deducted from revenue for electricity, water, and internet)`
                       }
                     </p>
                   </div>
@@ -137,8 +138,8 @@ export function ContractProposal({ isArabic }: ContractProposalProps) {
                     </div>
                     <p className="text-[10px] text-gray-500 leading-relaxed">
                       {isArabic 
-                        ? "(بعد خصم تكاليف الكهرباء والمياه والإنترنت البالغة 66,319 ريال من الإيرادات)"
-                        : "(after SAR 66,319 in costs deducted from revenue for electricity, water, and internet)"
+                        ? `(بعد خصم تكاليف الكهرباء والمياه والإنترنت البالغة ${yM.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 })} ريال من الإيرادات)`
+                        : `(after SAR ${yM.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 })} in costs deducted from revenue for electricity, water, and internet)`
                       }
                     </p>
                   </div>

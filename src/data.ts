@@ -109,18 +109,18 @@ export const Ou: MonthlyRevenue[] = [
   { month: { en: "Feb '26", ar: "فبراير 26" }, revenue: 157249 },
   { month: { en: "Mar '26", ar: "مارس 26" }, revenue: 152710 },
   { month: { en: "Apr '26", ar: "أبريل 26" }, revenue: 155421 },
-  { month: { en: "May '26", ar: "مايو 26" }, revenue: 148000 },
-  { month: { en: "Jun '26", ar: "يونيو 26" }, revenue: 148000 }
+  { month: { en: "May '26", ar: "مايو 26" }, revenue: 159703 },
+  { month: { en: "Jun '26", ar: "يونيو 26" }, revenue: 159702 }
 ];
 
-export const Ha = 1752516; // Actual Gross Collected Revenue (12.5 months / Full Contract)
-export const yM = 66319;   // Actual Deductions (OTAs & channel fees)
-export const xM = 1686197; // Net Collected Revenue = Ha - yM
-export const bM = 118034;   // Mathwaa share actually received (7% on net revenue)
+export const Ha = 1775921; // Actual Gross Collected Revenue (12.5 months / Full Contract)
+export const yM = 59988.52; // Costs deducted from revenue (electricity, water, and internet)
+export const xM = Ha - yM; // Net Collected Revenue = 1,715,932.48
+export const bM = Math.round(xM * 0.07); // Mathwaa share actually received (7% on net revenue) = 120,115
 
 export const Cfe = 0;       // No remaining forecast
-export const Ji = 1752516;  // Total Gross Revenue = Ha
-export const Rb = 118034;    // Mathwaa share actually received
+export const Ji = Ha;  // Total Gross Revenue = Ha = 1,775,921
+export const Rb = bM;    // Mathwaa share actually received = 120,115
 export const wM = 100;      // 100% completed!
 
 export const SM = 2447487; // Full Occupancy Book Value (12.5 months)
@@ -163,10 +163,10 @@ export const os = 150000; // Total Indirect Costs
 export const Eu = as + os; // Total Mathwaa Investment = 267,600
 
 export const Wa = 267600;  // Operating Costs for Year 1 (which matches total expenses)
-export const c$ = 1686197; // Actual Net Revenue for Renewal comparison
-export const tS = 118034;   // Mathwaa actual current earnings received (7% of net)
-export const gM = 149566;  // Net Loss under 7% actuals = 149,566
-export const vM = Math.round(c$ * 0.15); // Mathwaa retroactive earnings at 15% = 251,757
+export const c$ = xM; // Actual Net Revenue = 1,715,932.48
+export const tS = bM;   // Mathwaa actual current earnings received (7% of net) = 120,115
+export const gM = Wa - tS;  // Net Loss under 7% actuals = 147,485
+export const vM = Math.round(c$ * 0.15); // Mathwaa retroactive earnings at 15% = 257,390
 export const f$ = 1800000; // Estimated Year 2 Revenue
 export const Ud = Math.round(f$ * 0.2); // Mathwaa earnings at 20% on Year 2 = 360,000
 
@@ -185,8 +185,8 @@ export const insightsData: InsightItem[] = [
     color: "bg-blue-50 border-blue-100",
     labelColor: "text-blue-700",
     items: [
-      { en: "SAR 1,752,516 collected over the full contract period (June 16, 2025 to June 30, 2026).", ar: "تم تحصيل 1,752,516 ريال طوال فترة العقد الكاملة (16 يونيو 2025 إلى 30 يونيو 2026)." },
-      { en: "Net revenue stands at SAR 1,686,197 after SAR 66,319 in costs deducted from revenue for electricity, water, and internet.", ar: "بلغ صافي الإيراد 1,686,197 ريال بعد خصم تكاليف الكهرباء والمياه والإنترنت البالغة 66,319 ريال من إجمالي الإيرادات." }
+      { en: "SAR 1,775,921 collected over the full contract period (June 16, 2025 to June 30, 2026).", ar: "تم تحصيل 1,775,921 ريال طوال فترة العقد الكاملة (16 يونيو 2025 إلى 30 يونيو 2026)." },
+      { en: "Net revenue stands at SAR 1,715,932.48 after SAR 59,988.52 in costs deducted from revenue for electricity, water, and internet.", ar: "بلغ صافي الإيراد 1,715,932.48 ريال بعد خصم تكاليف الكهرباء والمياه والإنترنت البالغة 59,988.52 ريال من إجمالي الإيرادات." }
     ]
   },
   {
@@ -213,27 +213,27 @@ export const formulasData: FormulaSection[] = [
       {
         name: { en: "Average Monthly Revenue", ar: "متوسط الإيراد الشهري" },
         formula: { en: "Sum of monthly revenues ÷ 12.5 contract months", ar: "مجموع الإيرادات الشهرية ÷ 12.5 شهراً تعاقدياً" },
-        example: { en: "SAR 1,752,516 ÷ 12.5 = SAR 140,201/mo", ar: "1,752,516 ريال ÷ 12.5 = 140,201 ريال/شهر" }
+        example: { en: "SAR 1,775,921 ÷ 12.5 = SAR 142,074/mo", ar: "1,775,921 ريال ÷ 12.5 = 142,074 ريال/شهر" }
       },
       {
         name: { en: "Mathwa Share (7%)", ar: "حصة مثوى (7%)" },
         formula: { en: "Net Revenue × 7%", ar: "صافي الإيرادات × 7%" },
-        example: { en: "SAR 1,686,197 × 7% = SAR 118,034", ar: "1,686,197 ريال × 7% = 118,034 ريال" }
+        example: { en: "SAR 1,715,932.48 × 7% = SAR 120,115", ar: "1,715,932.48 ريال × 7% = 120,115 ريال" }
       },
       {
         name: { en: "Net Revenue", ar: "صافي الإيرادات" },
         formula: { en: "Gross Revenue - Costs deducted from revenue (Electricity, Water, & Internet)", ar: "إجمالي الإيرادات - التكاليف المخصومة من الإيرادات (الكهرباء والمياه والإنترنت)" },
-        example: { en: "SAR 1,752,516 - SAR 66,319 = SAR 1,686,197", ar: "1,752,516 ريال - 66,319 ريال = 1,686,197 ريال" }
+        example: { en: "SAR 1,775,921 - SAR 59,988.52 = SAR 1,715,932.48", ar: "1,775,921 ريال - 59,988.52 ريال = 1,715,932.48 ريال" }
       },
       {
         name: { en: "Revenue Progress %", ar: "نسبة تقدم الإيرادات" },
         formula: { en: "Actual Collected ÷ Total Forecast × 100", ar: "المحصّل فعلياً ÷ إجمالي التوقعات × 100" },
-        example: { en: "SAR 1,752,516 ÷ SAR 1,752,516 × 100 = 100% (Completed)", ar: "1,752,516 ÷ 1,752,516 × 100 = 100% (مكتمل)" }
+        example: { en: "SAR 1,775,921 ÷ SAR 1,775,921 × 100 = 100% (Completed)", ar: "1,775,921 ÷ 1,775,921 × 100 = 100% (مكتمل)" }
       },
       {
         name: { en: "Achievement Rate (vs Full Occupancy)", ar: "نسبة التحقيق (مقارنة بالإشغال الكامل)" },
         formula: { en: "Actual Collected ÷ Full Occupancy Book Value × 100", ar: "المحصّل فعلياً ÷ قيمة الإشغال الكامل × 100" },
-        example: { en: "SAR 1,752,516 ÷ SAR 2,447,487 × 100 = 71.6%", ar: "1,752,516 ÷ 2,447,487 × 100 = 71.6%" }
+        example: { en: "SAR 1,775,921 ÷ SAR 2,447,487 × 100 = 72.6%", ar: "1,775,921 ÷ 2,447,487 × 100 = 72.6%" }
       }
     ]
   },
@@ -248,7 +248,7 @@ export const formulasData: FormulaSection[] = [
       {
         name: { en: "Revenue per SAR Spent", ar: "الإيراد لكل ريال أُنفق" },
         formula: { en: "Gross Revenue ÷ Total Mathwaa Investment", ar: "إجمالي الإيرادات ÷ إجمالي استثمار مثوى" },
-        example: { en: "SAR 1,744,701 ÷ SAR 267,600 = 6.5x", ar: "1,744,701 ÷ 267,600 = 6.5 ضعف" }
+        example: { en: "SAR 1,775,921 ÷ SAR 267,600 = 6.6x", ar: "1,775,921 ÷ 267,600 = 6.6 ضعف" }
       },
       {
         name: { en: "Direct Costs %", ar: "نسبة التكاليف المباشرة" },
